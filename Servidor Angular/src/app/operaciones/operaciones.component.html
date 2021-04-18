@@ -1,0 +1,605 @@
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group">
+    <button type="button" class="btn btn-primary" (click)="verPeliculas()">Ver películas</button>
+    <button type="button" class="btn btn-primary" (click)="verPersonas()">Ver personas</button>
+    <button type="button" class="btn btn-primary" (click)="verNaves()">Ver naves</button>
+    <button type="button" class="btn btn-primary" (click)="verConsulta()">Consulta 1</button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/consulta2']">Consulta 2</button>
+  </div>
+</div>
+<div *ngIf="peliculas.length>0" class="sm-2">
+  <div *ngFor="let peli of peliculas">
+    <div class="card" style="width: 900px;">
+      <div class="card-header">
+        {{peli.title}}
+      </div>
+      <ul class="list-group list-group-flush" style="width: 900px;">
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">opening_crawl</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.opening_crawl}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">director</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.director}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">producer</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.producer}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">release_date</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.release_date}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">characters</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let car of peli.characters" class="card-text"><small>{{car.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">planets</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.planets}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">starships</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let nav of peli.starships" class="card-text"><small>{{nav.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">vehicles</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.vehicles}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">species</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.species}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">created</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.created}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">edited</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.edited}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">url</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{peli.url}}</small></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div *ngIf="personas.length>0" class="sm-2">
+  <div *ngFor="let pers of personas">
+    <div class="card" style="width: 900px;">
+      <div class="card-header">
+        {{pers.name}}
+      </div>
+      <ul class="list-group list-group-flush" style="width: 900px;">
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">height</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.height}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">mass</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.mass}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">hair_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.hair_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">skin_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.skin_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">eye_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.eye_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">birth_year</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.birth_year}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">gender</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.gender}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">homeworld</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.homeworld}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">films</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let peli of pers.films" class="card-text"><small>{{peli.title}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">species</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.species}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">vehicles</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.vehicles}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">starships</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let nave of pers.starships" class="card-text"><small>{{nave.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">created</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.created}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">edited</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.edited}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">url</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.url}}</small></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div *ngIf="naves.length>0" class="sm-2">
+  <div *ngFor="let nave of naves">
+    <div class="card" style="width: 900px;">
+      <div class="card-header">
+        {{nave.name}}
+      </div>
+      <ul class="list-group list-group-flush" style="width: 900px;">
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">model</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.model}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">manufacturer</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.manufacturer}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">cost_in_credits</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.cost_in_credits}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">length</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.length}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">max_atmosphering_speed</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.max_atmosphering_speed}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">crew</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.crew}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">passengers</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p  class="card-text"><small>{{nave.passengers}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">cargo_capacity</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.cargo_capacity}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">consumables</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.consumables}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">hyperdrive_rating</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let peli of nave.films" class="card-text"><small>{{nave.hyperdrive_rating}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">mglt</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.mglt}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">starship_class</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.starship_class}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">pilots</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let pilot of nave.pilots" class="card-text"><small>{{pilot.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">films</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let film of nave.films" class="card-text"><small>{{film.title}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">created</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.created}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">edited</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.edited}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">url</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{nave.url}}</small></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div *ngIf="consulta.length>0" class="sm-2">
+  <div *ngFor="let cons of consulta">
+    <div class="card" style="width: 900px;">
+      <div class="card-header">
+        {{cons.persona.name}}
+      </div>
+      <ul class="list-group list-group-flush" style="width: 900px;">
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">NumeroPeliculas</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{cons.numeroPeliculas}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">peliculas</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let pel of cons.peliculas" class="card-text"><small>{{pel}}</small></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

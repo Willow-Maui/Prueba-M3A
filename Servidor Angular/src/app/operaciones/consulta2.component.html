@@ -1,0 +1,201 @@
+<div class="">
+  <div class="form-check" *ngFor="let peli of peliculas" name="miselect" multiple="multiple">
+    <input class="form-check-input" type="checkbox" value="" id="defaultCheck" (change)="switchOpt(peli.id)">
+    <label class="form-check-label" for="defaultCheck">
+      {{peli.title}}
+    </label>
+  </div>
+</div>
+
+<button class="button btn-primary" (click)='realizarConsulta()'>Realizar consulta</button>
+<div *ngIf="personas.length>0" class="sm-2">
+  <div *ngFor="let pers of personas">
+    <div class="card" style="width: 900px;">
+      <div class="card-header">
+        {{pers.name}}
+      </div>
+      <ul class="list-group list-group-flush" style="width: 900px;">
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">height</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.height}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">mass</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.mass}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">hair_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.hair_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">skin_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.skin_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">eye_color</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.eye_color}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">birth_year</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.birth_year}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">gender</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.gender}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">homeworld</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.homeworld}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">films</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let peli of pers.films" class="card-text"><small>{{peli.title}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">species</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.species}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">vehicles</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.vehicles}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">starships</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p *ngFor="let nave of pers.starships" class="card-text"><small>{{nave.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">created</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.created}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">edited</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.edited}}</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">url</h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text"><small>{{pers.url}}</small></p>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
